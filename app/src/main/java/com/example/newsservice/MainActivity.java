@@ -17,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Intent intent = new Intent(MainActivity.this,newsService.class);
                 Intent intent = new Intent(MainActivity.this,newsService.class);
+                intent.setPackage("com.example.NEWS");  // 액션명 지정.
                 startService(intent);
             }
         });
@@ -29,7 +31,5 @@ public class MainActivity extends AppCompatActivity {
                 stopService(intent);
             }
         });
-
-
     }
 }
